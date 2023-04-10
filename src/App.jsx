@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-
+  
 export default function App() {
     return (
         <Previewer />
@@ -66,16 +66,18 @@ And here. | Okay. | I think we get it.
         const defaultMarkdown = {
             __html: marked.parse(
                 this.state.textContent,
-                { breaks: true}
+                { 
+                    breaks: true
+                }
             )
         };
         return (
-            <div>
+            <div id="wrapper">
                 <textarea 
                     name="editor" 
                     id="editor" 
                     cols="30" 
-                    rows="10"
+                    rows="15"
                     onChange={this.updatePreview}
                     value={this.state.textContent}
                     ></textarea>
