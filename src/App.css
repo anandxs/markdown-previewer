@@ -3,19 +3,22 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    --background-color: lightblue;
+    --background-color-1: #c0d8d8;
+    background-color: #87b5b5;
+    margin: 0;
+    padding-top: 30px;
 }
 
 #editor {
     width: 550px;
     padding: 5px;
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    background-color: var(--background-color);
+    background-color: var(--background-color-1);
 }
 
 #preview {
     width: 700px;
     padding: 10px;
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
-    background-color: var(--background-color);
+    background-color: var(--background-color-1);
 }
