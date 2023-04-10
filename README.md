@@ -4,7 +4,7 @@
 
 Displays markdown for a given text
 
-- Project hosted at https://random-quote-machine-anandxs.vercel.app/
+- Project hosted at https://markdown-previewer-anandxs.vercel.app/
 
 ## Installation
 
