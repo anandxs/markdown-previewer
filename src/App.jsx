@@ -64,7 +64,10 @@ And here. | Okay. | I think we get it.
     }
     render() {
         const defaultMarkdown = {
-            __html: marked.parse(this.state.textContent)
+            __html: marked.parse(
+                this.state.textContent,
+                { breaks: true}
+            )
         };
         return (
             <div>
@@ -77,7 +80,6 @@ And here. | Okay. | I think we get it.
                     value={this.state.textContent}
                     ></textarea>
                 <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
-                {/* <div id="preview" dangerouslySetInnerHTML={{ __html: marked(this.state.text) }}></div> */}
             </div>
         );
     }
