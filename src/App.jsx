@@ -32,6 +32,7 @@ class Previewer extends React.Component {
                     cols="30" 
                     rows="10"
                     onChange={this.updatePreview}
+                    value={this.state.textContent}
                     ></textarea>
                 <div id="preview">{this.getMarkDown(this.state.textContent)}</div>
             </div>
