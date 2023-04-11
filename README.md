@@ -19,6 +19,5 @@ Displays markdown for a given text
 
 ## Pending Tasks
 
-- Better styling
 - Configure for GitHub Flavor Markdown
 - Fix image spilling in markdown
