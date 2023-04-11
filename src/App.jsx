@@ -89,7 +89,7 @@ And here. | Okay. | I think we get it.
                 </div>
                 <div class="window"  id="preview-window">
                     <div class="title-bar">
-                        <div class="title-bar-text">Preview</div>
+                        <div class="title-bar-text">Previewer</div>
                         <div class="title-bar-controls">
                             <button aria-label="Close">X</button>
                         </div>
