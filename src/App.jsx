@@ -77,7 +77,7 @@ And here. | Okay. | I think we get it.
                 <div class="title-bar">
                     <div class="title-bar-text">Editor</div>
                     <div class="title-bar-controls">
-                        <button aria-label="Close">X</button>
+                        <i class="fa-sharp fa-solid fa-minimize"></i>
                     </div>
                 </div>
                     <textarea 
@@ -91,7 +91,7 @@ And here. | Okay. | I think we get it.
                     <div class="title-bar">
                         <div class="title-bar-text">Previewer</div>
                         <div class="title-bar-controls">
-                            <button aria-label="Close">X</button>
+                            <i class="fa-sharp fa-solid fa-minimize"></i>
                         </div>
                     </div>
                     <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
