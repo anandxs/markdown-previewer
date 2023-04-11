@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-
+  
 export default function App() {
     return (
         <Previewer />
@@ -66,20 +66,36 @@ And here. | Okay. | I think we get it.
         const defaultMarkdown = {
             __html: marked.parse(
                 this.state.textContent,
-                { breaks: true}
+                { 
+                    breaks: true
+                }
             )
         };
         return (
-            <div>
-                <textarea 
-                    name="editor" 
-                    id="editor" 
-                    cols="30" 
-                    rows="10"
-                    onChange={this.updatePreview}
-                    value={this.state.textContent}
-                    ></textarea>
-                <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
+            <div id="wrapper">
+                <div class="window" id="editor-window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Editor</div>
+                    <div class="title-bar-controls">
+                        <i class="fa-sharp fa-solid fa-minimize"></i>
+                    </div>
+                </div>
+                    <textarea 
+                        name="editor" 
+                        id="editor"
+                        onChange={this.updatePreview}
+                        value={this.state.textContent}>
+                    </textarea>
+                </div>
+                <div class="window"  id="preview-window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Previewer</div>
+                        <div class="title-bar-controls">
+                            <i class="fa-sharp fa-solid fa-minimize"></i>
+                        </div>
+                    </div>
+                    <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
+                </div>
             </div>
         );
     }
