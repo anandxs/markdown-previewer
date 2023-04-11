@@ -73,15 +73,29 @@ And here. | Okay. | I think we get it.
         };
         return (
             <div id="wrapper">
-                <textarea 
-                    name="editor" 
-                    id="editor" 
-                    cols="30" 
-                    rows="15"
-                    onChange={this.updatePreview}
-                    value={this.state.textContent}
-                    ></textarea>
-                <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
+                <div class="window" id="editor-window">
+                <div class="title-bar">
+                    <div class="title-bar-text">Editor</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close">X</button>
+                    </div>
+                </div>
+                    <textarea 
+                        name="editor" 
+                        id="editor"
+                        onChange={this.updatePreview}
+                        value={this.state.textContent}>
+                    </textarea>
+                </div>
+                <div class="window"  id="preview-window">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Preview</div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Close">X</button>
+                        </div>
+                    </div>
+                    <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
+                </div>
             </div>
         );
     }
