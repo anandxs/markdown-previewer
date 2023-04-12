@@ -140,6 +140,7 @@ And here. | Okay. | I think we get it.
                     </div>
                     <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
                 </div>
+                <div>by <a target="_blank" href="https://github.com/anandxs">Anand S</a></div>
             </div>
         );
     }
