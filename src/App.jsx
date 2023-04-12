@@ -60,17 +60,12 @@ And here. | Okay. | I think we get it.
         this.setState({
             textContent: event.target.value
         });
-        document.getElementById('preview').innerHTML = marked.parse(event.target.value);
+        const markup = marked.parse(event.target.value);
     }
     render() {
-        const defaultMarkdown = {
-            __html: marked.parse(
-                this.state.textContent,
-                { 
-                    breaks: true
-                }
-            )
-        };
+        const markup = marked.parse(this.state.textContent, { breaks: true });
+        console.log(markup)
+        const defaultMarkdown = {__html: markup };
         return (
             <div id="wrapper">
                 <div class="window" id="editor-window">
