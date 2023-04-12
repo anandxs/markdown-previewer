@@ -1,6 +1,8 @@
 import React from "react";
 import './App.css';
-  
+import { marked } from 'marked';
+import hljs from 'highlight.js';
+
 export default function App() {
     return (
         <Previewer />
@@ -10,6 +12,17 @@ export default function App() {
 class Previewer extends React.Component {
     constructor(props) {
         super(props);
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            highlight: function(code, lang) {
+              const language = 'javascript';
+              return hljs.highlight(code, { language }).value;
+            },
+            langPrefix: 'hljs language-',
+            pedantic: false,
+            gfm: true,
+            breaks: true
+          });
         this.state = {
             textContent: 
             `# Welcome to my React Markdown Previewer!
@@ -60,19 +73,17 @@ And here. | Okay. | I think we get it.
         this.setState({
             textContent: event.target.value
         });
-        const markup = marked.parse(event.target.value);
     }
     render() {
-        const markup = marked.parse(this.state.textContent, { breaks: true });
-        console.log(markup)
-        const defaultMarkdown = {__html: markup };
+        const markup = marked.parse(this.state.textContent, { gfm: true, breaks: true})
+        const defaultMarkdown = { __html: markup };
         return (
             <div id="wrapper">
-                <div class="window" id="editor-window">
-                <div class="title-bar">
-                    <div class="title-bar-text">Editor</div>
-                    <div class="title-bar-controls">
-                        <i class="fa-sharp fa-solid fa-minimize"></i>
+                <div className="window" id="editor-window">
+                <div className="title-bar">
+                    <div className="title-bar-text">Editor</div>
+                    <div className="title-bar-controls">
+                        <i className="fa-sharp fa-solid fa-minimize"></i>
                     </div>
                 </div>
                     <textarea 
@@ -82,11 +93,11 @@ And here. | Okay. | I think we get it.
                         value={this.state.textContent}>
                     </textarea>
                 </div>
-                <div class="window"  id="preview-window">
-                    <div class="title-bar">
-                        <div class="title-bar-text">Previewer</div>
-                        <div class="title-bar-controls">
-                            <i class="fa-sharp fa-solid fa-minimize"></i>
+                <div className="window"  id="preview-window">
+                    <div className="title-bar">
+                        <div className="title-bar-text">Previewer</div>
+                        <div className="title-bar-controls">
+                            <i className="fa-sharp fa-solid fa-minimize"></i>
                         </div>
                     </div>
                     <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
