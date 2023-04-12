@@ -74,6 +74,26 @@ And here. | Okay. | I think we get it.
             textContent: event.target.value
         });
     }
+    maximizeEditor = () => {
+        const previewWindow = document.getElementById('preview-window');
+        const editorWindow = document.getElementById('editor-window');
+        const maximizeIcon = document.getElementById('editor-max');
+        const minimizeIcon = document.getElementById('editor-min');
+        previewWindow.style.display='none';
+        editorWindow.style.height = '90vh';
+        maximizeIcon.style.display = 'none';
+        minimizeIcon.style.display = 'block';
+    }
+    minimizeEditor = () => {
+        const previewWindow = document.getElementById('preview-window');
+        const editorWindow = document.getElementById('editor-window');
+        const maximizeIcon = document.getElementById('editor-max');
+        const minimizeIcon = document.getElementById('editor-min');
+        previewWindow.style.display='block';
+        editorWindow.style.height = '230px';
+        maximizeIcon.style.display = 'block';
+        minimizeIcon.style.display = 'none';
+    }
     render() {
         const markup = marked.parse(this.state.textContent, { gfm: true, breaks: true})
         const defaultMarkdown = { __html: markup };
@@ -83,7 +103,8 @@ And here. | Okay. | I think we get it.
                 <div className="title-bar">
                     <div className="title-bar-text">Editor</div>
                     <div className="title-bar-controls">
-                        <i className="fa-sharp fa-solid fa-minimize"></i>
+                        <i id="editor-max" onClick={this.maximizeEditor} className="fa-sharp fa-solid fa-minimize"></i>
+                        <i id="editor-min" onClick={this.minimizeEditor} className="fa-sharp fa-solid fa-maximize"></i>
                     </div>
                 </div>
                     <textarea 
@@ -97,7 +118,7 @@ And here. | Okay. | I think we get it.
                     <div className="title-bar">
                         <div className="title-bar-text">Previewer</div>
                         <div className="title-bar-controls">
-                            <i className="fa-sharp fa-solid fa-minimize"></i>
+                            <i className="fa-sharp fa-solid fa-maximize"></i>
                         </div>
                     </div>
                     <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
