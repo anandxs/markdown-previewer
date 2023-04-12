@@ -172,3 +172,10 @@
 .fa-minimize:hover {
     color: #fff;
 }
+
+@media (max-width: 768px) {
+    #editor-window,
+    #preview-window {
+        width: 100%;
+    }
+}
