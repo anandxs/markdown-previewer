@@ -167,3 +167,8 @@
 #preview-min {
     display: none;
 }
+
+.fa-maximize:hover,
+.fa-minimize:hover {
+    color: #fff;
+}
