@@ -163,6 +163,7 @@
     font-weight: bold;
 }
 
-#editor-min {
+#editor-min,
+#preview-min {
     display: none;
 }

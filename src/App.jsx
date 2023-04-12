@@ -94,6 +94,22 @@ And here. | Okay. | I think we get it.
         maximizeIcon.style.display = 'block';
         minimizeIcon.style.display = 'none';
     }
+    maximizePreview = () => {
+        const editorWindow = document.getElementById('editor-window');
+        const maximizeIcon = document.getElementById('preview-max');
+        const minimizeIcon = document.getElementById('preview-min');
+        editorWindow.style.display = 'none';
+        maximizeIcon.style.display = 'none';
+        minimizeIcon.style.display = 'block';
+    }
+    minimizePreview = () => {
+        const editorWindow = document.getElementById('editor-window');
+        const maximizeIcon = document.getElementById('preview-max');
+        const minimizeIcon = document.getElementById('preview-min');
+        editorWindow.style.display = 'block';
+        maximizeIcon.style.display = 'block';
+        minimizeIcon.style.display = 'none';
+    }
     render() {
         const markup = marked.parse(this.state.textContent, { gfm: true, breaks: true})
         const defaultMarkdown = { __html: markup };
@@ -118,7 +134,8 @@ And here. | Okay. | I think we get it.
                     <div className="title-bar">
                         <div className="title-bar-text">Previewer</div>
                         <div className="title-bar-controls">
-                            <i className="fa-sharp fa-solid fa-maximize"></i>
+                        <i id="preview-max" onClick={this.maximizePreview} className="fa-sharp fa-solid fa-minimize"></i>
+                        <i id="preview-min" onClick={this.minimizePreview} className="fa-sharp fa-solid fa-maximize"></i>
                         </div>
                     </div>
                     <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
