@@ -19,5 +19,4 @@ Displays markdown for a given text
 
 ## Pending Tasks
 
-- Configure for GitHub Flavor Markdown
 - Fix image spilling in markdown
