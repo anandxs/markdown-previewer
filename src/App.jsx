@@ -116,12 +116,12 @@ And here. | Okay. | I think we get it.
         return (
             <div id="wrapper">
                 <div className="window" id="editor-window">
-                <div className="title-bar">
-                    <div className="title-bar-text">Editor</div>
-                    <div className="title-bar-controls">
-                        <i id="editor-max" onClick={this.maximizeEditor} className="fa-sharp fa-solid fa-minimize"></i>
-                        <i id="editor-min" onClick={this.minimizeEditor} className="fa-sharp fa-solid fa-maximize"></i>
-                    </div>
+                    <div className="title-bar">
+                        <WindowTitle title="Editor" />
+                        <div className="title-bar-controls">
+                            <i id="editor-max" onClick={this.maximizeEditor} className="fa-sharp fa-solid fa-minimize"></i>
+                            <i id="editor-min" onClick={this.minimizeEditor} className="fa-sharp fa-solid fa-maximize"></i>
+                        </div>
                 </div>
                     <textarea 
                         name="editor" 
@@ -132,7 +132,7 @@ And here. | Okay. | I think we get it.
                 </div>
                 <div className="window"  id="preview-window">
                     <div className="title-bar">
-                        <div className="title-bar-text">Previewer</div>
+                        <WindowTitle title="Previewer" />
                         <div className="title-bar-controls">
                         <i id="preview-max" onClick={this.maximizePreview} className="fa-sharp fa-solid fa-minimize"></i>
                         <i id="preview-min" onClick={this.minimizePreview} className="fa-sharp fa-solid fa-maximize"></i>
@@ -144,4 +144,10 @@ And here. | Okay. | I think we get it.
             </div>
         );
     }
+}
+
+function WindowTitle(props) {
+    return (
+        <div className="title-bar-text">{props.title}</div>
+    );
 }
