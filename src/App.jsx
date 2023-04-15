@@ -134,11 +134,11 @@ And here. | Okay. | I think we get it.
                     <div className="title-bar">
                         <WindowTitle title="Previewer" />
                         <div className="title-bar-controls">
-                        <i id="preview-max" onClick={this.maximizePreview} className="fa-sharp fa-solid fa-minimize"></i>
-                        <i id="preview-min" onClick={this.minimizePreview} className="fa-sharp fa-solid fa-maximize"></i>
+                            <i id="preview-max" onClick={this.maximizePreview} className="fa-sharp fa-solid fa-minimize"></i>
+                            <i id="preview-min" onClick={this.minimizePreview} className="fa-sharp fa-solid fa-maximize"></i>
                         </div>
                     </div>
-                    <div id="preview" dangerouslySetInnerHTML={defaultMarkdown} />
+                    <PreviewWindow markdown={defaultMarkdown} />
                 </div>
                 <div>by <a target="_blank" href="https://github.com/anandxs">Anand S</a></div>
             </div>
@@ -149,5 +149,11 @@ And here. | Okay. | I think we get it.
 function WindowTitle(props) {
     return (
         <div className="title-bar-text">{props.title}</div>
+    );
+}
+
+function PreviewWindow(props) {
+    return (
+       <div id="preview" dangerouslySetInnerHTML={props.markdown} />
     );
 }
