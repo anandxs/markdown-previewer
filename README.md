@@ -16,7 +16,3 @@ Displays markdown for a given text
 
 - Write text into the editor
 - Preview markdown in real time
-
-## Pending Tasks
-
-- Fix image spilling in markdown
