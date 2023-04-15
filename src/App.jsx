@@ -140,7 +140,7 @@ And here. | Okay. | I think we get it.
                     </div>
                     <PreviewWindow markdown={defaultMarkdown} />
                 </div>
-                <div>by <a target="_blank" href="https://github.com/anandxs">Anand S</a></div>
+                <Contact />
             </div>
         );
     }
@@ -155,5 +155,11 @@ function WindowTitle(props) {
 function PreviewWindow(props) {
     return (
        <div id="preview" dangerouslySetInnerHTML={props.markdown} />
+    );
+}
+
+function Contact() {
+    return (
+        <div>by <a target="_blank" href="https://github.com/anandxs">Anand S</a></div>
     );
 }
